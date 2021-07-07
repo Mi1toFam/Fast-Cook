@@ -76,13 +76,13 @@ Fast Cook allows users to search for recipes based on all the ingredients they h
 * Saved Recipes
     * Details
 
-## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
-
 ### [BONUS] Digital Wireframes & Mockups
 
+<img width="695" alt="Screen Shot 2021-07-07 at 12 39 44 PM" src="https://user-images.githubusercontent.com/65626248/124797749-a085c180-df20-11eb-8f46-08922359394d.png">
+
 ### [BONUS] Interactive Prototype
+
+* Coming soon...
 
 ## Schema 
 [This section will be completed in Unit 9]
