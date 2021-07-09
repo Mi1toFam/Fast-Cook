@@ -85,10 +85,20 @@ Fast Cook allows users to search for recipes based on all the ingredients they h
 * Coming soon...
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
-[Add table of models]
+**Recipe**
+
+| Property | Type   | Description             |
+| -------- | ------ | ----------------------- |
+|  name        |    String    | The name of the recipe.                   |
+|   ingredients       |    Array    |          A list of all the ingredients used in the recipe.               |
+|     diet     |    String    |               A dietary restriction that the recipe must be suitable for.           |
+|   readyTime   | Number | An estimate of how long it will take to cook the recipe. |
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+* Recipes Screen
+   * (Read/GET) Retrieve all recipes from API upon request.                                                                                                     <img width="898" alt="Screen Shot 2021-07-09 at 12 16 31 PM" src="https://user-images.githubusercontent.com/65626248/125108343-ef159600-e0af-11eb-8183-1ff77f66955c.png">
+* Saved Recipes Screen
+   * (Read/Get) Query all saved recipes where user is author.                                                                                                   <img width="609" alt="Screen Shot 2021-07-09 at 12 11 46 PM" src="https://user-images.githubusercontent.com/65626248/125108568-31d76e00-e0b0-11eb-9acd-4046cd696f26.png">
+
+
