@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		481E611D269CC5E900AA34F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E611C269CC5E900AA34F9 /* AppDelegate.m */; };
+		481E6120269CC5E900AA34F9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E611F269CC5E900AA34F9 /* SceneDelegate.m */; };
+		481E6123269CC5E900AA34F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E6122269CC5E900AA34F9 /* ViewController.m */; };
+		481E6126269CC5E900AA34F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481E6124269CC5E900AA34F9 /* Main.storyboard */; };
+		481E6128269CC5EB00AA34F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 481E6127269CC5EB00AA34F9 /* Assets.xcassets */; };
+		481E612B269CC5EB00AA34F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481E6129269CC5EB00AA34F9 /* LaunchScreen.storyboard */; };
+		481E612E269CC5EB00AA34F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E612D269CC5EB00AA34F9 /* main.m */; };
+		481E6138269CC5EB00AA34F9 /* Fast_CookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E6137269CC5EB00AA34F9 /* Fast_CookTests.m */; };
+		481E6143269CC5EB00AA34F9 /* Fast_CookUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E6142269CC5EB00AA34F9 /* Fast_CookUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		481E6134269CC5EB00AA34F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 481E6110269CC5E900AA34F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 481E6117269CC5E900AA34F9;
+			remoteInfo = "Fast Cook";
+		};
+		481E613F269CC5EB00AA34F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 481E6110269CC5E900AA34F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 481E6117269CC5E900AA34F9;
+			remoteInfo = "Fast Cook";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		481E6118269CC5E900AA34F9 /* Fast Cook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fast Cook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		481E611B269CC5E900AA34F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		481E611C269CC5E900AA34F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		481E611E269CC5E900AA34F9 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		481E611F269CC5E900AA34F9 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		481E6121269CC5E900AA34F9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		481E6122269CC5E900AA34F9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		481E6125269CC5E900AA34F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		481E6127269CC5EB00AA34F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		481E612A269CC5EB00AA34F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		481E612C269CC5EB00AA34F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		481E612D269CC5EB00AA34F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		481E6133269CC5EB00AA34F9 /* Fast CookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fast CookTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		481E6137269CC5EB00AA34F9 /* Fast_CookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fast_CookTests.m; sourceTree = "<group>"; };
+		481E6139269CC5EB00AA34F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		481E613E269CC5EB00AA34F9 /* Fast CookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fast CookUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		481E6142269CC5EB00AA34F9 /* Fast_CookUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fast_CookUITests.m; sourceTree = "<group>"; };
+		481E6144269CC5EB00AA34F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		481E6115269CC5E900AA34F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E6130269CC5EB00AA34F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E613B269CC5EB00AA34F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		481E610F269CC5E900AA34F9 = {
+			isa = PBXGroup;
+			children = (
+				481E611A269CC5E900AA34F9 /* Fast Cook */,
+				481E6136269CC5EB00AA34F9 /* Fast CookTests */,
+				481E6141269CC5EB00AA34F9 /* Fast CookUITests */,
+				481E6119269CC5E900AA34F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		481E6119269CC5E900AA34F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				481E6118269CC5E900AA34F9 /* Fast Cook.app */,
+				481E6133269CC5EB00AA34F9 /* Fast CookTests.xctest */,
+				481E613E269CC5EB00AA34F9 /* Fast CookUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		481E611A269CC5E900AA34F9 /* Fast Cook */ = {
+			isa = PBXGroup;
+			children = (
+				481E611B269CC5E900AA34F9 /* AppDelegate.h */,
+				481E611C269CC5E900AA34F9 /* AppDelegate.m */,
+				481E611E269CC5E900AA34F9 /* SceneDelegate.h */,
+				481E611F269CC5E900AA34F9 /* SceneDelegate.m */,
+				481E6121269CC5E900AA34F9 /* ViewController.h */,
+				481E6122269CC5E900AA34F9 /* ViewController.m */,
+				481E6124269CC5E900AA34F9 /* Main.storyboard */,
+				481E6127269CC5EB00AA34F9 /* Assets.xcassets */,
+				481E6129269CC5EB00AA34F9 /* LaunchScreen.storyboard */,
+				481E612C269CC5EB00AA34F9 /* Info.plist */,
+				481E612D269CC5EB00AA34F9 /* main.m */,
+			);
+			path = "Fast Cook";
+			sourceTree = "<group>";
+		};
+		481E6136269CC5EB00AA34F9 /* Fast CookTests */ = {
+			isa = PBXGroup;
+			children = (
+				481E6137269CC5EB00AA34F9 /* Fast_CookTests.m */,
+				481E6139269CC5EB00AA34F9 /* Info.plist */,
+			);
+			path = "Fast CookTests";
+			sourceTree = "<group>";
+		};
+		481E6141269CC5EB00AA34F9 /* Fast CookUITests */ = {
+			isa = PBXGroup;
+			children = (
+				481E6142269CC5EB00AA34F9 /* Fast_CookUITests.m */,
+				481E6144269CC5EB00AA34F9 /* Info.plist */,
+			);
+			path = "Fast CookUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		481E6117269CC5E900AA34F9 /* Fast Cook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 481E6147269CC5EB00AA34F9 /* Build configuration list for PBXNativeTarget "Fast Cook" */;
+			buildPhases = (
+				481E6114269CC5E900AA34F9 /* Sources */,
+				481E6115269CC5E900AA34F9 /* Frameworks */,
+				481E6116269CC5E900AA34F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fast Cook";
+			productName = "Fast Cook";
+			productReference = 481E6118269CC5E900AA34F9 /* Fast Cook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		481E6132269CC5EB00AA34F9 /* Fast CookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 481E614A269CC5EB00AA34F9 /* Build configuration list for PBXNativeTarget "Fast CookTests" */;
+			buildPhases = (
+				481E612F269CC5EB00AA34F9 /* Sources */,
+				481E6130269CC5EB00AA34F9 /* Frameworks */,
+				481E6131269CC5EB00AA34F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				481E6135269CC5EB00AA34F9 /* PBXTargetDependency */,
+			);
+			name = "Fast CookTests";
+			productName = "Fast CookTests";
+			productReference = 481E6133269CC5EB00AA34F9 /* Fast CookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		481E613D269CC5EB00AA34F9 /* Fast CookUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 481E614D269CC5EB00AA34F9 /* Build configuration list for PBXNativeTarget "Fast CookUITests" */;
+			buildPhases = (
+				481E613A269CC5EB00AA34F9 /* Sources */,
+				481E613B269CC5EB00AA34F9 /* Frameworks */,
+				481E613C269CC5EB00AA34F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				481E6140269CC5EB00AA34F9 /* PBXTargetDependency */,
+			);
+			name = "Fast CookUITests";
+			productName = "Fast CookUITests";
+			productReference = 481E613E269CC5EB00AA34F9 /* Fast CookUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		481E6110269CC5E900AA34F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					481E6117269CC5E900AA34F9 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					481E6132269CC5EB00AA34F9 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 481E6117269CC5E900AA34F9;
+					};
+					481E613D269CC5EB00AA34F9 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 481E6117269CC5E900AA34F9;
+					};
+				};
+			};
+			buildConfigurationList = 481E6113269CC5E900AA34F9 /* Build configuration list for PBXProject "Fast Cook" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 481E610F269CC5E900AA34F9;
+			productRefGroup = 481E6119269CC5E900AA34F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				481E6117269CC5E900AA34F9 /* Fast Cook */,
+				481E6132269CC5EB00AA34F9 /* Fast CookTests */,
+				481E613D269CC5EB00AA34F9 /* Fast CookUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		481E6116269CC5E900AA34F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481E612B269CC5EB00AA34F9 /* LaunchScreen.storyboard in Resources */,
+				481E6128269CC5EB00AA34F9 /* Assets.xcassets in Resources */,
+				481E6126269CC5E900AA34F9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E6131269CC5EB00AA34F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E613C269CC5EB00AA34F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		481E6114269CC5E900AA34F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481E6123269CC5E900AA34F9 /* ViewController.m in Sources */,
+				481E611D269CC5E900AA34F9 /* AppDelegate.m in Sources */,
+				481E612E269CC5EB00AA34F9 /* main.m in Sources */,
+				481E6120269CC5E900AA34F9 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E612F269CC5EB00AA34F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481E6138269CC5EB00AA34F9 /* Fast_CookTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E613A269CC5EB00AA34F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481E6143269CC5EB00AA34F9 /* Fast_CookUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		481E6135269CC5EB00AA34F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 481E6117269CC5E900AA34F9 /* Fast Cook */;
+			targetProxy = 481E6134269CC5EB00AA34F9 /* PBXContainerItemProxy */;
+		};
+		481E6140269CC5EB00AA34F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 481E6117269CC5E900AA34F9 /* Fast Cook */;
+			targetProxy = 481E613F269CC5EB00AA34F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		481E6124269CC5E900AA34F9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				481E6125269CC5E900AA34F9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		481E6129269CC5EB00AA34F9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				481E612A269CC5EB00AA34F9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		481E6145269CC5EB00AA34F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		481E6146269CC5EB00AA34F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		481E6148269CC5EB00AA34F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A48XFAV3YG;
+				INFOPLIST_FILE = "Fast Cook/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.Fast-Cook";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		481E6149269CC5EB00AA34F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A48XFAV3YG;
+				INFOPLIST_FILE = "Fast Cook/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.Fast-Cook";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		481E614B269CC5EB00AA34F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A48XFAV3YG;
+				INFOPLIST_FILE = "Fast CookTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.Fast-CookTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fast Cook.app/Fast Cook";
+			};
+			name = Debug;
+		};
+		481E614C269CC5EB00AA34F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A48XFAV3YG;
+				INFOPLIST_FILE = "Fast CookTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.Fast-CookTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fast Cook.app/Fast Cook";
+			};
+			name = Release;
+		};
+		481E614E269CC5EB00AA34F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A48XFAV3YG;
+				INFOPLIST_FILE = "Fast CookUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.Fast-CookUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fast Cook";
+			};
+			name = Debug;
+		};
+		481E614F269CC5EB00AA34F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A48XFAV3YG;
+				INFOPLIST_FILE = "Fast CookUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.Fast-CookUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fast Cook";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		481E6113269CC5E900AA34F9 /* Build configuration list for PBXProject "Fast Cook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481E6145269CC5EB00AA34F9 /* Debug */,
+				481E6146269CC5EB00AA34F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		481E6147269CC5EB00AA34F9 /* Build configuration list for PBXNativeTarget "Fast Cook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481E6148269CC5EB00AA34F9 /* Debug */,
+				481E6149269CC5EB00AA34F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		481E614A269CC5EB00AA34F9 /* Build configuration list for PBXNativeTarget "Fast CookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481E614B269CC5EB00AA34F9 /* Debug */,
+				481E614C269CC5EB00AA34F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		481E614D269CC5EB00AA34F9 /* Build configuration list for PBXNativeTarget "Fast CookUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481E614E269CC5EB00AA34F9 /* Debug */,
+				481E614F269CC5EB00AA34F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 481E6110269CC5E900AA34F9 /* Project object */;
+}
