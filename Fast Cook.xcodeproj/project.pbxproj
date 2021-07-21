@@ -3,19 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1371D4DB84345F42A0677594 /* Pods_Fast_Cook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3202DCBECF341BC71F04A5D5 /* Pods_Fast_Cook.framework */; };
 		481E611D269CC5E900AA34F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E611C269CC5E900AA34F9 /* AppDelegate.m */; };
 		481E6120269CC5E900AA34F9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E611F269CC5E900AA34F9 /* SceneDelegate.m */; };
-		481E6123269CC5E900AA34F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E6122269CC5E900AA34F9 /* ViewController.m */; };
 		481E6126269CC5E900AA34F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481E6124269CC5E900AA34F9 /* Main.storyboard */; };
 		481E6128269CC5EB00AA34F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 481E6127269CC5EB00AA34F9 /* Assets.xcassets */; };
 		481E612B269CC5EB00AA34F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481E6129269CC5EB00AA34F9 /* LaunchScreen.storyboard */; };
 		481E612E269CC5EB00AA34F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E612D269CC5EB00AA34F9 /* main.m */; };
 		481E6138269CC5EB00AA34F9 /* Fast_CookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E6137269CC5EB00AA34F9 /* Fast_CookTests.m */; };
 		481E6143269CC5EB00AA34F9 /* Fast_CookUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E6142269CC5EB00AA34F9 /* Fast_CookUITests.m */; };
+		481E6155269CCA5B00AA34F9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E6154269CCA5B00AA34F9 /* LoginViewController.m */; };
+		481E6158269DE6EC00AA34F9 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E6157269DE6EC00AA34F9 /* SignUpViewController.m */; };
+		481E615B269E380000AA34F9 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E615A269E380000AA34F9 /* SearchViewController.m */; };
+		481E615E269E381500AA34F9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E615D269E381500AA34F9 /* ProfileViewController.m */; };
+		481E6161269F435200AA34F9 /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E6160269F435200AA34F9 /* RecipesViewController.m */; };
+		481E6164269F489200AA34F9 /* RecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E6163269F489200AA34F9 /* RecipeCell.m */; };
+		481E6167269F499400AA34F9 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E6166269F499400AA34F9 /* Recipe.m */; };
+		481E616A26A0E7AF00AA34F9 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E616926A0E7AF00AA34F9 /* DetailsViewController.m */; };
+		481E616D26A7519B00AA34F9 /* RecipeCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E616C26A7519B00AA34F9 /* RecipeCell2.m */; };
+		779B04A399455F8BB20573A0 /* Pods_Fast_Cook_Fast_CookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D280C60ED965005402B3F18 /* Pods_Fast_Cook_Fast_CookUITests.framework */; };
+		FABCD520CD97A08864296F57 /* Pods_Fast_CookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CCD25ECD401A2ED3BA820A /* Pods_Fast_CookTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D280C60ED965005402B3F18 /* Pods_Fast_Cook_Fast_CookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fast_Cook_Fast_CookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3202DCBECF341BC71F04A5D5 /* Pods_Fast_Cook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fast_Cook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481E6118269CC5E900AA34F9 /* Fast Cook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fast Cook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		481E611B269CC5E900AA34F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		481E611C269CC5E900AA34F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		481E611E269CC5E900AA34F9 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		481E611F269CC5E900AA34F9 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		481E6121269CC5E900AA34F9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		481E6122269CC5E900AA34F9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		481E6125269CC5E900AA34F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		481E6127269CC5EB00AA34F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		481E612A269CC5EB00AA34F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +65,31 @@
 		481E613E269CC5EB00AA34F9 /* Fast CookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fast CookUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		481E6142269CC5EB00AA34F9 /* Fast_CookUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fast_CookUITests.m; sourceTree = "<group>"; };
 		481E6144269CC5EB00AA34F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		481E6153269CCA5B00AA34F9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		481E6154269CCA5B00AA34F9 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		481E6156269DE6EC00AA34F9 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		481E6157269DE6EC00AA34F9 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		481E6159269E380000AA34F9 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		481E615A269E380000AA34F9 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		481E615C269E381500AA34F9 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		481E615D269E381500AA34F9 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		481E615F269F435200AA34F9 /* RecipesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipesViewController.h; sourceTree = "<group>"; };
+		481E6160269F435200AA34F9 /* RecipesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipesViewController.m; sourceTree = "<group>"; };
+		481E6162269F489200AA34F9 /* RecipeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeCell.h; sourceTree = "<group>"; };
+		481E6163269F489200AA34F9 /* RecipeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeCell.m; sourceTree = "<group>"; };
+		481E6165269F499400AA34F9 /* Recipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		481E6166269F499400AA34F9 /* Recipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		481E616826A0E7AF00AA34F9 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		481E616926A0E7AF00AA34F9 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		481E616B26A7519B00AA34F9 /* RecipeCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeCell2.h; sourceTree = "<group>"; };
+		481E616C26A7519B00AA34F9 /* RecipeCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeCell2.m; sourceTree = "<group>"; };
+		4B5CFB9E05185F6C03C13A5A /* Pods-Fast Cook-Fast CookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast Cook-Fast CookUITests.release.xcconfig"; path = "Target Support Files/Pods-Fast Cook-Fast CookUITests/Pods-Fast Cook-Fast CookUITests.release.xcconfig"; sourceTree = "<group>"; };
+		57C281948FF1F194B180FDFB /* Pods-Fast Cook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast Cook.release.xcconfig"; path = "Target Support Files/Pods-Fast Cook/Pods-Fast Cook.release.xcconfig"; sourceTree = "<group>"; };
+		80CCD25ECD401A2ED3BA820A /* Pods_Fast_CookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fast_CookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B115E50E27C1E42F975376C7 /* Pods-Fast CookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast CookTests.release.xcconfig"; path = "Target Support Files/Pods-Fast CookTests/Pods-Fast CookTests.release.xcconfig"; sourceTree = "<group>"; };
+		B86CBB637EECC864D8006F22 /* Pods-Fast Cook-Fast CookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast Cook-Fast CookUITests.debug.xcconfig"; path = "Target Support Files/Pods-Fast Cook-Fast CookUITests/Pods-Fast Cook-Fast CookUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0A14EDB02DEA422FE5784C7 /* Pods-Fast CookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast CookTests.debug.xcconfig"; path = "Target Support Files/Pods-Fast CookTests/Pods-Fast CookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C745D19A2223E6CAE4EF2EBC /* Pods-Fast Cook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast Cook.debug.xcconfig"; path = "Target Support Files/Pods-Fast Cook/Pods-Fast Cook.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1371D4DB84345F42A0677594 /* Pods_Fast_Cook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABCD520CD97A08864296F57 /* Pods_Fast_CookTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +113,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				779B04A399455F8BB20573A0 /* Pods_Fast_Cook_Fast_CookUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		396687714B32262180C3C739 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3202DCBECF341BC71F04A5D5 /* Pods_Fast_Cook.framework */,
+				2D280C60ED965005402B3F18 /* Pods_Fast_Cook_Fast_CookUITests.framework */,
+				80CCD25ECD401A2ED3BA820A /* Pods_Fast_CookTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		481E610F269CC5E900AA34F9 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +137,8 @@
 				481E6136269CC5EB00AA34F9 /* Fast CookTests */,
 				481E6141269CC5EB00AA34F9 /* Fast CookUITests */,
 				481E6119269CC5E900AA34F9 /* Products */,
+				5096EC02E64C8F12969795B5 /* Pods */,
+				396687714B32262180C3C739 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,12 +155,13 @@
 		481E611A269CC5E900AA34F9 /* Fast Cook */ = {
 			isa = PBXGroup;
 			children = (
+				481E6152269CC9C600AA34F9 /* Models */,
+				481E6151269CC9A600AA34F9 /* View Controllers */,
+				481E6150269CC99700AA34F9 /* Views */,
 				481E611B269CC5E900AA34F9 /* AppDelegate.h */,
 				481E611C269CC5E900AA34F9 /* AppDelegate.m */,
 				481E611E269CC5E900AA34F9 /* SceneDelegate.h */,
 				481E611F269CC5E900AA34F9 /* SceneDelegate.m */,
-				481E6121269CC5E900AA34F9 /* ViewController.h */,
-				481E6122269CC5E900AA34F9 /* ViewController.m */,
 				481E6124269CC5E900AA34F9 /* Main.storyboard */,
 				481E6127269CC5EB00AA34F9 /* Assets.xcassets */,
 				481E6129269CC5EB00AA34F9 /* LaunchScreen.storyboard */,
@@ -137,6 +189,58 @@
 			path = "Fast CookUITests";
 			sourceTree = "<group>";
 		};
+		481E6150269CC99700AA34F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				481E6162269F489200AA34F9 /* RecipeCell.h */,
+				481E6163269F489200AA34F9 /* RecipeCell.m */,
+				481E616B26A7519B00AA34F9 /* RecipeCell2.h */,
+				481E616C26A7519B00AA34F9 /* RecipeCell2.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		481E6151269CC9A600AA34F9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				481E6153269CCA5B00AA34F9 /* LoginViewController.h */,
+				481E6154269CCA5B00AA34F9 /* LoginViewController.m */,
+				481E6156269DE6EC00AA34F9 /* SignUpViewController.h */,
+				481E6157269DE6EC00AA34F9 /* SignUpViewController.m */,
+				481E6159269E380000AA34F9 /* SearchViewController.h */,
+				481E615A269E380000AA34F9 /* SearchViewController.m */,
+				481E615C269E381500AA34F9 /* ProfileViewController.h */,
+				481E615D269E381500AA34F9 /* ProfileViewController.m */,
+				481E615F269F435200AA34F9 /* RecipesViewController.h */,
+				481E6160269F435200AA34F9 /* RecipesViewController.m */,
+				481E616826A0E7AF00AA34F9 /* DetailsViewController.h */,
+				481E616926A0E7AF00AA34F9 /* DetailsViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		481E6152269CC9C600AA34F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				481E6165269F499400AA34F9 /* Recipe.h */,
+				481E6166269F499400AA34F9 /* Recipe.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5096EC02E64C8F12969795B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C745D19A2223E6CAE4EF2EBC /* Pods-Fast Cook.debug.xcconfig */,
+				57C281948FF1F194B180FDFB /* Pods-Fast Cook.release.xcconfig */,
+				B86CBB637EECC864D8006F22 /* Pods-Fast Cook-Fast CookUITests.debug.xcconfig */,
+				4B5CFB9E05185F6C03C13A5A /* Pods-Fast Cook-Fast CookUITests.release.xcconfig */,
+				C0A14EDB02DEA422FE5784C7 /* Pods-Fast CookTests.debug.xcconfig */,
+				B115E50E27C1E42F975376C7 /* Pods-Fast CookTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 481E6147269CC5EB00AA34F9 /* Build configuration list for PBXNativeTarget "Fast Cook" */;
 			buildPhases = (
+				ECD86D9FC2973F7642A78748 /* [CP] Check Pods Manifest.lock */,
 				481E6114269CC5E900AA34F9 /* Sources */,
 				481E6115269CC5E900AA34F9 /* Frameworks */,
 				481E6116269CC5E900AA34F9 /* Resources */,
+				D0233134E7C1CEB7E58475DA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +267,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 481E614A269CC5EB00AA34F9 /* Build configuration list for PBXNativeTarget "Fast CookTests" */;
 			buildPhases = (
+				DFB8C1703B1AD204EB35D105 /* [CP] Check Pods Manifest.lock */,
 				481E612F269CC5EB00AA34F9 /* Sources */,
 				481E6130269CC5EB00AA34F9 /* Frameworks */,
 				481E6131269CC5EB00AA34F9 /* Resources */,
@@ -179,9 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 481E614D269CC5EB00AA34F9 /* Build configuration list for PBXNativeTarget "Fast CookUITests" */;
 			buildPhases = (
+				722ACDF27AE4FBE5EC828B2F /* [CP] Check Pods Manifest.lock */,
 				481E613A269CC5EB00AA34F9 /* Sources */,
 				481E613B269CC5EB00AA34F9 /* Frameworks */,
 				481E613C269CC5EB00AA34F9 /* Resources */,
+				5DC47F95E235424B5FDE8E93 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,14 +370,125 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5DC47F95E235424B5FDE8E93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fast Cook-Fast CookUITests/Pods-Fast Cook-Fast CookUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fast Cook-Fast CookUITests/Pods-Fast Cook-Fast CookUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fast Cook-Fast CookUITests/Pods-Fast Cook-Fast CookUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		722ACDF27AE4FBE5EC828B2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fast Cook-Fast CookUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0233134E7C1CEB7E58475DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fast Cook/Pods-Fast Cook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fast Cook/Pods-Fast Cook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fast Cook/Pods-Fast Cook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFB8C1703B1AD204EB35D105 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fast CookTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECD86D9FC2973F7642A78748 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fast Cook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		481E6114269CC5E900AA34F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				481E6123269CC5E900AA34F9 /* ViewController.m in Sources */,
+				481E6164269F489200AA34F9 /* RecipeCell.m in Sources */,
+				481E6167269F499400AA34F9 /* Recipe.m in Sources */,
+				481E616A26A0E7AF00AA34F9 /* DetailsViewController.m in Sources */,
+				481E6155269CCA5B00AA34F9 /* LoginViewController.m in Sources */,
+				481E6158269DE6EC00AA34F9 /* SignUpViewController.m in Sources */,
 				481E611D269CC5E900AA34F9 /* AppDelegate.m in Sources */,
 				481E612E269CC5EB00AA34F9 /* main.m in Sources */,
+				481E6161269F435200AA34F9 /* RecipesViewController.m in Sources */,
+				481E615E269E381500AA34F9 /* ProfileViewController.m in Sources */,
+				481E615B269E380000AA34F9 /* SearchViewController.m in Sources */,
+				481E616D26A7519B00AA34F9 /* RecipeCell2.m in Sources */,
 				481E6120269CC5E900AA34F9 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +658,7 @@
 		};
 		481E6148269CC5EB00AA34F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C745D19A2223E6CAE4EF2EBC /* Pods-Fast Cook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -456,6 +677,7 @@
 		};
 		481E6149269CC5EB00AA34F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57C281948FF1F194B180FDFB /* Pods-Fast Cook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -474,6 +696,7 @@
 		};
 		481E614B269CC5EB00AA34F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0A14EDB02DEA422FE5784C7 /* Pods-Fast CookTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -494,6 +717,7 @@
 		};
 		481E614C269CC5EB00AA34F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B115E50E27C1E42F975376C7 /* Pods-Fast CookTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -514,6 +738,7 @@
 		};
 		481E614E269CC5EB00AA34F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B86CBB637EECC864D8006F22 /* Pods-Fast Cook-Fast CookUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A48XFAV3YG;
@@ -532,6 +757,7 @@
 		};
 		481E614F269CC5EB00AA34F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B5CFB9E05185F6C03C13A5A /* Pods-Fast Cook-Fast CookUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A48XFAV3YG;

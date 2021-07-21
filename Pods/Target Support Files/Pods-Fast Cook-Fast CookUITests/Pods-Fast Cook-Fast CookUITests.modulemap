@@ -1,0 +1,6 @@
+framework module Pods_Fast_Cook_Fast_CookUITests {
+  umbrella header "Pods-Fast Cook-Fast CookUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
