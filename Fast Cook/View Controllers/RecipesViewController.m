@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) NSArray *recipes;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -26,18 +27,28 @@
     self.tableView.dataSource = self;
     
     [self fetchRecipes];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchRecipes) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
 
 -(void)fetchRecipes{
-    NSString *link = @"https://api.spoonacular.com/recipes/complexSearch?apiKey=68c1462cdfc64471a3c2df51555225be";
+    NSString *link = @"https://api.spoonacular.com/recipes/complexSearch?apiKey=68c1462cdfc64471a3c2df51555225be&number=50";
+    if (self.titleMatch != nil) {
+        NSString *title = [@"&titleMatch=" stringByAppendingString:self.titleMatch];
+        link = [link stringByAppendingString:title];
+    }
     if ([self.isVegan isEqual:@"vegan"]) {
         link = [link stringByAppendingString:@"&diet=vegan"];
     }
     else if ([self.isVegetarian isEqual:@"vegetarian"]) {
         link = [link stringByAppendingString:@"&diet=vegetarian"];
     }
-    NSString *time = [@"&number=50&maxReadyTime=" stringByAppendingString:self.maxReadyTime];
-    link = [link stringByAppendingString:time];
+    if (self.maxReadyTime != nil) {
+        NSString *time = [@"&number=50&maxReadyTime=" stringByAppendingString:self.maxReadyTime];
+        link = [link stringByAppendingString:time];
+    }
     NSURL *url = [NSURL URLWithString:link];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
@@ -46,8 +57,8 @@
                NSLog(@"%@", [error localizedDescription]);
                
                UIAlertController *alert = [UIAlertController
-                                           alertControllerWithTitle:@"Cannot Retrieve Movies"
-                                           message:@"Your internet connection appears to be offline."
+                                           alertControllerWithTitle:@"Cannot Retrieve Recipes"
+                                           message:@""
                                            preferredStyle:(UIAlertControllerStyleAlert)];
                
                UIAlertAction *okAction = [UIAlertAction
@@ -67,6 +78,8 @@
                self.recipes = dataDictionary[@"results"];
                
                [self.tableView reloadData];
+               
+               [self.refreshControl endRefreshing];
            }
     }];
     [task resume];

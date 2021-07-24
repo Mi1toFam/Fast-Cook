@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *isVegan;
 @property (strong, nonatomic) NSString *isVegetarian;
 @property (strong, nonatomic) NSString *maxReadyTime;
+@property (strong, nonatomic) NSString *titleMatch;
 
 @end
 

@@ -6,6 +6,7 @@
 //
 
 #import "DetailsViewController.h"
+#import "UserRecipe.h"
 #import "UIImageView+AFNetworking.h"
 
 @interface DetailsViewController ()
@@ -17,21 +18,48 @@
 @property (weak, nonatomic) IBOutlet UILabel *servingsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ingredientsLabel;
+@property (strong, nonatomic) IBOutlet UIScrollView *detailsScrollView;
 
 
 @end
 
 @implementation DetailsViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.addButton.layer.cornerRadius = 40;
     
-    [self fetchRecipes];
+    PFUser *user = [PFUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
+    [query whereKey:@"author" equalTo: user];
+    [query whereKey:@"recipeID" equalTo: self.iD];
+    query.limit = 1;
+    
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *recipes, NSError *error) {
+        if (recipes.count == 0) {
+            self.addButton.backgroundColor = [UIColor blueColor];
+            [self.addButton setTitle:@"Add" forState:UIControlStateNormal];
+        } else {
+            self.addButton.backgroundColor = [UIColor redColor];
+            [self.addButton setTitle:@"Remove" forState:UIControlStateNormal];
+        }
+    }];
+            
+    [self fetchRecipe];
 }
 
--(void)fetchRecipes {
+- (void)viewDidLayoutSubviews {
+    UIView *contentView;
+    
+    [self.detailsScrollView addSubview:contentView];
+    
+    self.detailsScrollView.contentSize = contentView.frame.size; //sets ScrollView content size
+}
+
+-(void)fetchRecipe {
     NSString *startURL = @"https://api.spoonacular.com/recipes/";
     NSString *middleURL = [startURL stringByAppendingString:self.iD];
     NSString *fullURL = [middleURL stringByAppendingString:@"/information?apiKey=68c1462cdfc64471a3c2df51555225be"];
@@ -90,7 +118,26 @@
 }
 
 - (IBAction)didTapAdd:(id)sender {
+    PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
+    [query whereKey:@"author" equalTo: [PFUser currentUser]];
+    [query whereKey:@"recipeID" equalTo: self.iD];
     
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *recipes, NSError *error) {
+        if (recipes.count != 0) {
+            for (PFObject *object in recipes) {
+                [object deleteInBackground];
+            }
+            
+            self.addButton.backgroundColor = [UIColor blueColor];
+            [self.addButton setTitle:@"Add" forState:UIControlStateNormal];
+        } else {
+            [UserRecipe postRecipeWithImage:self.recipe[@"image"] withName:self.nameLabel.text withTime:self.timeLabel.text withID:self.iD];
+            
+            self.addButton.backgroundColor = [UIColor redColor];
+            [self.addButton setTitle:@"Remove" forState:UIControlStateNormal];
+        }
+    }];
 }
 
 

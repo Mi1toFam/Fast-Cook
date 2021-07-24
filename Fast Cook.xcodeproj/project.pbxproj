@@ -25,6 +25,8 @@
 		481E6167269F499400AA34F9 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E6166269F499400AA34F9 /* Recipe.m */; };
 		481E616A26A0E7AF00AA34F9 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E616926A0E7AF00AA34F9 /* DetailsViewController.m */; };
 		481E616D26A7519B00AA34F9 /* RecipeCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E616C26A7519B00AA34F9 /* RecipeCell2.m */; };
+		481E617026A8E76300AA34F9 /* UserRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E616F26A8E76300AA34F9 /* UserRecipe.m */; };
+		481E617326A8FE5F00AA34F9 /* RecipeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E617226A8FE5F00AA34F9 /* RecipeCollectionCell.m */; };
 		779B04A399455F8BB20573A0 /* Pods_Fast_Cook_Fast_CookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D280C60ED965005402B3F18 /* Pods_Fast_Cook_Fast_CookUITests.framework */; };
 		FABCD520CD97A08864296F57 /* Pods_Fast_CookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CCD25ECD401A2ED3BA820A /* Pods_Fast_CookTests.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,10 @@
 		481E616926A0E7AF00AA34F9 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		481E616B26A7519B00AA34F9 /* RecipeCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeCell2.h; sourceTree = "<group>"; };
 		481E616C26A7519B00AA34F9 /* RecipeCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeCell2.m; sourceTree = "<group>"; };
+		481E616E26A8E76300AA34F9 /* UserRecipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserRecipe.h; sourceTree = "<group>"; };
+		481E616F26A8E76300AA34F9 /* UserRecipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserRecipe.m; sourceTree = "<group>"; };
+		481E617126A8FE5F00AA34F9 /* RecipeCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionCell.h; sourceTree = "<group>"; };
+		481E617226A8FE5F00AA34F9 /* RecipeCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionCell.m; sourceTree = "<group>"; };
 		4B5CFB9E05185F6C03C13A5A /* Pods-Fast Cook-Fast CookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast Cook-Fast CookUITests.release.xcconfig"; path = "Target Support Files/Pods-Fast Cook-Fast CookUITests/Pods-Fast Cook-Fast CookUITests.release.xcconfig"; sourceTree = "<group>"; };
 		57C281948FF1F194B180FDFB /* Pods-Fast Cook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast Cook.release.xcconfig"; path = "Target Support Files/Pods-Fast Cook/Pods-Fast Cook.release.xcconfig"; sourceTree = "<group>"; };
 		80CCD25ECD401A2ED3BA820A /* Pods_Fast_CookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fast_CookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +202,8 @@
 				481E6163269F489200AA34F9 /* RecipeCell.m */,
 				481E616B26A7519B00AA34F9 /* RecipeCell2.h */,
 				481E616C26A7519B00AA34F9 /* RecipeCell2.m */,
+				481E617126A8FE5F00AA34F9 /* RecipeCollectionCell.h */,
+				481E617226A8FE5F00AA34F9 /* RecipeCollectionCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +232,8 @@
 			children = (
 				481E6165269F499400AA34F9 /* Recipe.h */,
 				481E6166269F499400AA34F9 /* Recipe.m */,
+				481E616E26A8E76300AA34F9 /* UserRecipe.h */,
+				481E616F26A8E76300AA34F9 /* UserRecipe.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -480,6 +490,7 @@
 			files = (
 				481E6164269F489200AA34F9 /* RecipeCell.m in Sources */,
 				481E6167269F499400AA34F9 /* Recipe.m in Sources */,
+				481E617026A8E76300AA34F9 /* UserRecipe.m in Sources */,
 				481E616A26A0E7AF00AA34F9 /* DetailsViewController.m in Sources */,
 				481E6155269CCA5B00AA34F9 /* LoginViewController.m in Sources */,
 				481E6158269DE6EC00AA34F9 /* SignUpViewController.m in Sources */,
@@ -490,6 +501,7 @@
 				481E615B269E380000AA34F9 /* SearchViewController.m in Sources */,
 				481E616D26A7519B00AA34F9 /* RecipeCell2.m in Sources */,
 				481E6120269CC5E900AA34F9 /* SceneDelegate.m in Sources */,
+				481E617326A8FE5F00AA34F9 /* RecipeCollectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
