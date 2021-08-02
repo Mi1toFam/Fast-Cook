@@ -7,6 +7,7 @@
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import "Chameleon.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -19,6 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSMutableArray *colorsArray = [[NSMutableArray alloc] init];
+    [colorsArray addObject:self.view.backgroundColor];
+    [colorsArray addObject:self.view.tintColor];
+    NSArray *colors = [colorsArray copy];
+    self.view.backgroundColor = GradientColor(UIGradientStyleLeftToRight, self.view.frame, colors);
+
 }
 
 - (IBAction)didTapLogin:(id)sender {

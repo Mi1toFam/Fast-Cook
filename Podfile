@@ -8,6 +8,7 @@ target 'Fast Cook' do
   # Pods for Fast Cook
   pod 'Parse'
   pod 'AFNetworking'
+  pod 'ChameleonFramework'
 
   target 'Fast CookTests' do
     inherit! :search_paths

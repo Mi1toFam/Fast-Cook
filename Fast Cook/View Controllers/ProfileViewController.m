@@ -11,12 +11,13 @@
 #import <Parse/Parse.h>
 #import "RecipeCollectionCell.h"
 #import "DetailsViewController.h"
+#import "APIManager.h"
+#import "RecipeCollectionHeader.h"
 
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSArray *recipes;
-@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
-@property (weak, nonatomic) IBOutlet UILabel *userLabel;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -25,14 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    PFUser *user = [PFUser currentUser];
-    self.userLabel.text = user.username;
-    
-    self.logoutButton.layer.cornerRadius = 20;
-    
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
-    
+        
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*) self.collectionView.collectionViewLayout;
 
     CGFloat postersPerLine = 2;
@@ -41,34 +37,23 @@
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 
     [self fetchRecipes];
-}
-
-- (IBAction)didTapLogout:(id)sender {
-    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    myDelegate.window.rootViewController = loginViewController;
     
-    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        // PFUser.current() will now be nil
-    }];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchRecipes) forControlEvents:UIControlEventValueChanged];
+    [self.collectionView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (void)fetchRecipes {
-    PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
-    [query whereKey:@"author" equalTo:[PFUser currentUser]];
-    [query orderByDescending:@"createdAt"];
-    query.limit = 20;
-
-    // fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray *recipes, NSError *error) {
-        if (recipes != nil) {
+    [[APIManager shared] getSavedRecipesWithID: nil withCompletion:^(NSArray *recipes, NSError *error) {
+        if (recipes) {
             // do something with the array of object returned by the call
             self.recipes = recipes;
             
             [self.collectionView reloadData];
-        } else {
+            
+            [self.refreshControl endRefreshing];
+        }
+        else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
@@ -89,6 +74,19 @@
     return self.recipes.count;
 }
 
+- (IBAction)didTapLogout:(id)sender {
+    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    myDelegate.window.rootViewController = loginViewController;
+    
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+    }];
+}
+
+
 
 #pragma mark - Navigation
 
@@ -101,6 +99,14 @@
     
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.iD = self.recipes[indexPath.item][@"recipeID"];
+}
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    RecipeCollectionHeader *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"RecipeCollectionHeader" forIndexPath:indexPath];
+    PFUser *user = [PFUser currentUser];
+    headerView.userLabel.text = user.username;
+    headerView.logoutButton.layer.cornerRadius = 20;
+    return headerView;
 }
 
 

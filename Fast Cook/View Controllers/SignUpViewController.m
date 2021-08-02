@@ -7,6 +7,7 @@
 
 #import "SignUpViewController.h"
 #import <Parse/Parse.h>
+#import "Chameleon.h"
 
 @interface SignUpViewController ()
 
@@ -21,6 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSMutableArray *colorsArray = [[NSMutableArray alloc] init];
+    [colorsArray addObject:self.view.backgroundColor];
+    [colorsArray addObject:self.view.tintColor];
+    NSArray *colors = [colorsArray copy];
+    self.view.backgroundColor = GradientColor(UIGradientStyleLeftToRight, self.view.frame, colors);
 }
 
 - (IBAction)didTapSignUp:(id)sender {

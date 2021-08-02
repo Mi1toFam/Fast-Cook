@@ -8,6 +8,7 @@
 #import "DetailsViewController.h"
 #import "UserRecipe.h"
 #import "UIImageView+AFNetworking.h"
+#import "APIManager.h"
 
 @interface DetailsViewController ()
 
@@ -16,10 +17,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *servingsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ingredientsLabel;
-@property (strong, nonatomic) IBOutlet UIScrollView *detailsScrollView;
-
+@property (weak, nonatomic) IBOutlet UILabel *missingIngredientsLabel;
+@property (weak, nonatomic) IBOutlet UITextView *instructionsView;
 
 @end
 
@@ -31,99 +32,85 @@
     // Do any additional setup after loading the view.
     self.addButton.layer.cornerRadius = 40;
     
-    PFUser *user = [PFUser currentUser];
-    PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
-    [query whereKey:@"author" equalTo: user];
-    [query whereKey:@"recipeID" equalTo: self.iD];
-    query.limit = 1;
-    
-    // fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray *recipes, NSError *error) {
-        if (recipes.count == 0) {
-            self.addButton.backgroundColor = [UIColor blueColor];
-            [self.addButton setTitle:@"Add" forState:UIControlStateNormal];
-        } else {
+    [[APIManager shared] getSavedRecipesWithID:self.iD withCompletion:^(NSArray *recipes, NSError *error) {
+        if (recipes.count != 0) {
             self.addButton.backgroundColor = [UIColor redColor];
             [self.addButton setTitle:@"Remove" forState:UIControlStateNormal];
         }
+        else {
+            self.addButton.backgroundColor = [UIColor blueColor];
+            [self.addButton setTitle:@"Add" forState:UIControlStateNormal];
+        }
     }];
-            
-    [self fetchRecipe];
-}
 
-- (void)viewDidLayoutSubviews {
-    UIView *contentView;
-    
-    [self.detailsScrollView addSubview:contentView];
-    
-    self.detailsScrollView.contentSize = contentView.frame.size; //sets ScrollView content size
+    [self fetchRecipe];
 }
 
 -(void)fetchRecipe {
     NSString *startURL = @"https://api.spoonacular.com/recipes/";
     NSString *middleURL = [startURL stringByAppendingString:self.iD];
     NSString *fullURL = [middleURL stringByAppendingString:@"/information?apiKey=68c1462cdfc64471a3c2df51555225be"];
-    NSURL *url = [NSURL URLWithString: fullURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-           if (error != nil) {
-               NSLog(@"%@", [error localizedDescription]);
-               
-               UIAlertController *alert = [UIAlertController
-                                           alertControllerWithTitle:@"Cannot Retrieve Movies"
-                                           message:@"Your internet connection appears to be offline."
-                                           preferredStyle:(UIAlertControllerStyleAlert)];
-               
-               UIAlertAction *okAction = [UIAlertAction
-                                          actionWithTitle:@"OK"
-                                          style:UIAlertActionStyleDefault
-                                          handler:^(UIAlertAction * _Nonnull action) {}];
-               // add the OK action to the alert controller
-               [alert addAction:okAction];
-              
-               [self presentViewController:alert animated:YES completion:^{
-                   // optional code for what happens after the alert controller has finished presenting
-               }];
-           }
-           else {
-               NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                              
-               self.recipe = dataDictionary;
-               
-               self.nameLabel.text = dataDictionary[@"title"];
-               
-               NSNumber *timeData = dataDictionary[@"readyInMinutes"];
-               NSString *time = [[timeData stringValue] stringByAppendingString:@" minutes"];
-               self.timeLabel.text = time;
-               
-               NSNumber *servingsData = dataDictionary[@"servings"];
-               NSString *servings = [@"Servings: " stringByAppendingString:[servingsData stringValue]];
-               self.servingsLabel.text = servings;
-               
-               NSURL *posterURL = [NSURL URLWithString:dataDictionary[@"image"]];
-               self.posterView.image = nil;
-               [self.posterView setImageWithURL:posterURL];
-               
-               NSString *ingredients = @"Ingredients: \n\n";
-               for (NSDictionary *ingrArray in dataDictionary[@"extendedIngredients"]) {
-                   NSString *ingrName = ingrArray[@"original"];
-                   NSString *fullIngr = [ingrName stringByAppendingString:@"\n"];
-                   ingredients = [ingredients stringByAppendingString:fullIngr];
-               }
-               self.ingredientsLabel.text = ingredients;
-           }
+    [[APIManager shared] getSpecificRecipeWithURL:fullURL withCompletion:^(NSDictionary *recipe, NSError *error) {
+        if (recipe) {
+            self.recipe = recipe;
+            
+            self.titleLabel.text = recipe[@"title"];
+            
+            NSNumber *timeData = recipe[@"readyInMinutes"];
+            NSString *time = [[timeData stringValue] stringByAppendingString:@" minutes"];
+            self.timeLabel.text = time;
+            
+            NSNumber *servingsData = recipe[@"servings"];
+            NSString *servings = [@"Servings: " stringByAppendingString:[servingsData stringValue]];
+            self.servingsLabel.text = servings;
+            
+            NSURL *posterURL = [NSURL URLWithString:recipe[@"image"]];
+            self.posterView.image = nil;
+            [self.posterView setImageWithURL:posterURL];
+            
+            NSString *ingredients = @"Ingredients: \n- ";
+            for (NSDictionary *ingrArray in recipe[@"extendedIngredients"]) {
+                NSString *ingrName = ingrArray[@"original"];
+                NSString *fullIngr = [ingrName stringByAppendingString:@"\n- "];
+                ingredients = [ingredients stringByAppendingString:fullIngr];
+            }
+            ingredients= [ingredients substringToIndex:(ingredients.length - 4)];
+            self.ingredientsLabel.text = ingredients;
+            
+            NSString *instructions = recipe[@"instructions"];
+            @try {
+                if ([[instructions substringToIndex:1]  isEqual: @"<"]) {
+                    instructions = [instructions stringByReplacingOccurrencesOfString:@"<li>" withString:@""];
+                    instructions = [instructions stringByReplacingOccurrencesOfString:@"</li>" withString:@"\n"];
+                    NSRange range = NSMakeRange(4, instructions.length-9);
+                    instructions = [instructions substringWithRange:range];
+                    self.instructionsView.text = instructions;
+                }
+                else {
+                    instructions = [instructions stringByReplacingOccurrencesOfString:@"." withString:@".\n"];
+                    self.instructionsView.text = instructions;
+                }
+            }
+            @catch (id anException) {
+                instructions = @"No instructions available. Get full details here.";
+                NSMutableAttributedString *newInstructions = [[NSMutableAttributedString alloc] initWithString:instructions];
+                NSString *url = recipe[@"sourceUrl"];
+                [newInstructions addAttribute:NSLinkAttributeName value:url range:NSMakeRange(newInstructions.length - 5, 4)];
+                
+                UIFont *font = [UIFont fontWithName:@"Chalkboard SE" size:16];
+                [newInstructions addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, newInstructions.length)];
+                
+                self.instructionsView.attributedText = newInstructions;
+            }
+        }
+        else {
+            NSLog(@"😫😫😫 Error getting recipes: %@", error.localizedDescription);
+        }
     }];
-    [task resume];
 }
 
 - (IBAction)didTapAdd:(id)sender {
-    PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
-    [query whereKey:@"author" equalTo: [PFUser currentUser]];
-    [query whereKey:@"recipeID" equalTo: self.iD];
-    
-    // fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray *recipes, NSError *error) {
+    [[APIManager shared] getSavedRecipesWithID:self.iD withCompletion:^(NSArray *recipes, NSError *error) {
         if (recipes.count != 0) {
             for (PFObject *object in recipes) {
                 [object deleteInBackground];
@@ -131,8 +118,9 @@
             
             self.addButton.backgroundColor = [UIColor blueColor];
             [self.addButton setTitle:@"Add" forState:UIControlStateNormal];
-        } else {
-            [UserRecipe postRecipeWithImage:self.recipe[@"image"] withName:self.nameLabel.text withTime:self.timeLabel.text withID:self.iD];
+        }
+        else {
+            [UserRecipe postRecipeWithImage:self.recipe[@"image"] withName:self.titleLabel.text withTime:self.timeLabel.text withID:self.iD];
             
             self.addButton.backgroundColor = [UIColor redColor];
             [self.addButton setTitle:@"Remove" forState:UIControlStateNormal];

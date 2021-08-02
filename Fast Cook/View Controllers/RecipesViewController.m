@@ -9,6 +9,7 @@
 #import "RecipeCell.h"
 #import "Recipe.h"
 #import "DetailsViewController.h"
+#import "APIManager.h"
 
 @interface RecipesViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -34,7 +35,23 @@
 }
 
 -(void)fetchRecipes{
-    NSString *link = @"https://api.spoonacular.com/recipes/complexSearch?apiKey=68c1462cdfc64471a3c2df51555225be&number=50";
+    NSString *link = [self retrieveURL];
+    [[APIManager shared] getRecipesWithURL:link withCompletion:^(NSArray *recipes, NSError *error) {
+        if (recipes) {
+            self.recipes = recipes;
+            
+            [self.tableView reloadData];
+            
+            [self.refreshControl endRefreshing];
+        }
+        else {
+            NSLog(@"😫😫😫 Error getting recipes: %@", error.localizedDescription);
+        }
+    }];
+}
+
+- (NSString *)retrieveURL{
+    NSString *link = @"https://api.spoonacular.com/recipes/complexSearch?apiKey=68c1462cdfc64471a3c2df51555225be&number=10";
     if (self.titleMatch != nil) {
         NSString *title = [@"&titleMatch=" stringByAppendingString:self.titleMatch];
         link = [link stringByAppendingString:title];
@@ -49,40 +66,19 @@
         NSString *time = [@"&number=50&maxReadyTime=" stringByAppendingString:self.maxReadyTime];
         link = [link stringByAppendingString:time];
     }
-    NSURL *url = [NSURL URLWithString:link];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-           if (error != nil) {
-               NSLog(@"%@", [error localizedDescription]);
-               
-               UIAlertController *alert = [UIAlertController
-                                           alertControllerWithTitle:@"Cannot Retrieve Recipes"
-                                           message:@""
-                                           preferredStyle:(UIAlertControllerStyleAlert)];
-               
-               UIAlertAction *okAction = [UIAlertAction
-                                          actionWithTitle:@"OK"
-                                          style:UIAlertActionStyleDefault
-                                          handler:^(UIAlertAction * _Nonnull action) {}];
-               // add the OK action to the alert controller
-               [alert addAction:okAction];
-              
-               [self presentViewController:alert animated:YES completion:^{
-                   // optional code for what happens after the alert controller has finished presenting
-               }];
-           }
-           else {
-               NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                                             
-               self.recipes = dataDictionary[@"results"];
-               
-               [self.tableView reloadData];
-               
-               [self.refreshControl endRefreshing];
-           }
-    }];
-    [task resume];
+    if (self.ingredients != nil) {
+        NSString *ingredientsList = @"&includeIngredients=";
+        for (NSString *ingredient in self.ingredients) {
+            ingredientsList = [ingredientsList stringByAppendingString:ingredient];
+            ingredientsList = [ingredientsList stringByAppendingString:@",+"];
+        }
+        NSLog(@"%@", ingredientsList);
+        ingredientsList = [ingredientsList substringToIndex:(ingredientsList.length - 2)];
+        NSLog(@"%@", ingredientsList);
+        link = [link stringByAppendingString:ingredientsList];
+    }
+    NSLog(@"%@", link);
+    return link;
 }
 
 
@@ -110,12 +106,10 @@
     else {
          cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell2"];
     }
-        
-    cell.recipe = [[Recipe alloc] initWithDictionary:self.recipes[indexPath.row]];
     
-    cell.contentView.layer.cornerRadius = 40;
-    cell.contentView.layer.maskedCorners = kCALayerMinXMaxYCorner | kCALayerMaxXMaxYCorner | kCALayerMinXMinYCorner | kCALayerMaxXMinYCorner;
-    [cell.contentView sizeToFit];
+    cell.circleView.layer.cornerRadius = 20;
+    
+    cell.recipe = [[Recipe alloc] initWithDictionary:self.recipes[indexPath.row]];
     
     [cell refreshData];
         
@@ -124,6 +118,15 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.recipes.count;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Define the initial state (Before the animation)
+    cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, -500, 100, 0);
+    
+    // Define the final state (after the animation)
+    [UIView animateWithDuration:1.0 animations:^{cell.layer.transform = CATransform3DIdentity;}];
+    
 }
 
 @end
