@@ -49,7 +49,6 @@
     else {
         [self.ingredientsButton setTitle:@"Start Adding Ingredients" forState:UIControlStateNormal];
     }
-        
     [self.recipeField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
 }
 
@@ -64,11 +63,16 @@
     }
     else {
         [self.searchTableView setHidden:FALSE];
-        NSString *link = [@"https://api.spoonacular.com/recipes/autocomplete?apiKey=68c1462cdfc64471a3c2df51555225be&number=10&query=" stringByAppendingString:self.recipeField.text];
+        NSString *link = [@"https://api.spoonacular.com/recipes/autocomplete?number=10&query=" stringByAppendingString:self.recipeField.text];
+        NSString *path = [[NSBundle mainBundle] pathForResource: @"Info" ofType: @"plist"];
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+        id key = [dict objectForKey: @"API_KEY"];
+        NSString *apiKey = [@"&apiKey=" stringByAppendingString:key];
+        link = [link stringByAppendingString:apiKey];
         [[APIManager shared] getAutocompleteWithURL:link withCompletion:^(NSArray *searches, NSError *error) {
             if (searches) {
                 self.searches = searches;
-                
+                                
                 [self.searchTableView reloadData];
             }
             else {

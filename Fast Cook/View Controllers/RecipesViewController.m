@@ -51,7 +51,11 @@
 }
 
 - (NSString *)retrieveURL{
-    NSString *link = @"https://api.spoonacular.com/recipes/complexSearch?apiKey=68c1462cdfc64471a3c2df51555225be&number=10";
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Info" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    id key = [dict objectForKey: @"API_KEY"];
+    NSString *link = @"https://api.spoonacular.com/recipes/complexSearch?number=20&apiKey=";
+    link = [link stringByAppendingString:key];
     if (self.titleMatch != nil) {
         NSString *title = [@"&titleMatch=" stringByAppendingString:self.titleMatch];
         link = [link stringByAppendingString:title];
@@ -72,12 +76,9 @@
             ingredientsList = [ingredientsList stringByAppendingString:ingredient];
             ingredientsList = [ingredientsList stringByAppendingString:@",+"];
         }
-        NSLog(@"%@", ingredientsList);
         ingredientsList = [ingredientsList substringToIndex:(ingredientsList.length - 2)];
-        NSLog(@"%@", ingredientsList);
         link = [link stringByAppendingString:ingredientsList];
     }
-    NSLog(@"%@", link);
     return link;
 }
 

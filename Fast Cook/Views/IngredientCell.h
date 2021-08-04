@@ -17,9 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IngredientCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UIButton *removeButton;
-@property (strong, nonatomic) NSIndexPath *indexPath;
-@property (nonatomic, weak) id <CellCalssDelegate > delegate;
 
 @end
 

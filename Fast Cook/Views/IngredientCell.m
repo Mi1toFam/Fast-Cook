@@ -21,9 +21,5 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)didTapRemove:(id)sender {
-    [self.delegate removeTableViewCellAtPath:self.indexPath];
-}
-
 
 @end

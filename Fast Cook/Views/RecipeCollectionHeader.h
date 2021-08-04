@@ -11,7 +11,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RecipeCollectionHeader : UICollectionReusableView
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
-@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
 @end
 

@@ -49,7 +49,11 @@
 -(void)fetchRecipe {
     NSString *startURL = @"https://api.spoonacular.com/recipes/";
     NSString *middleURL = [startURL stringByAppendingString:self.iD];
-    NSString *fullURL = [middleURL stringByAppendingString:@"/information?apiKey=68c1462cdfc64471a3c2df51555225be"];
+    middleURL = [middleURL stringByAppendingString:@"/information?apiKey="];
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Info" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    id key = [dict objectForKey: @"API_KEY"];
+    NSString *fullURL = [middleURL stringByAppendingString:key];
     [[APIManager shared] getSpecificRecipeWithURL:fullURL withCompletion:^(NSDictionary *recipe, NSError *error) {
         if (recipe) {
             self.recipe = recipe;
@@ -74,22 +78,31 @@
                 NSString *fullIngr = [ingrName stringByAppendingString:@"\n- "];
                 ingredients = [ingredients stringByAppendingString:fullIngr];
             }
-            ingredients= [ingredients substringToIndex:(ingredients.length - 4)];
+            ingredients= [ingredients substringToIndex:(ingredients.length - 3)];
             self.ingredientsLabel.text = ingredients;
             
             NSString *instructions = recipe[@"instructions"];
             @try {
+               NSString *details = @"Instructions below are retrieved from another website, and may be slightly different from the primary source. Get full details here. \n\n";
+                NSMutableAttributedString *webInstructions = [[NSMutableAttributedString alloc] initWithString:details];
+                NSString *url = recipe[@"sourceUrl"];
+                [webInstructions addAttribute:NSLinkAttributeName value:url range:NSMakeRange(webInstructions.length - 8, 4)];
+                
                 if ([[instructions substringToIndex:1]  isEqual: @"<"]) {
                     instructions = [instructions stringByReplacingOccurrencesOfString:@"<li>" withString:@""];
                     instructions = [instructions stringByReplacingOccurrencesOfString:@"</li>" withString:@"\n"];
                     NSRange range = NSMakeRange(4, instructions.length-9);
                     instructions = [instructions substringWithRange:range];
-                    self.instructionsView.text = instructions;
                 }
                 else {
                     instructions = [instructions stringByReplacingOccurrencesOfString:@"." withString:@".\n"];
-                    self.instructionsView.text = instructions;
                 }
+                
+                NSAttributedString *newInstructions = [[NSAttributedString alloc] initWithString:instructions];
+                UIFont *font = [UIFont fontWithName:@"Chalkboard SE" size:16];
+                [webInstructions appendAttributedString:newInstructions];
+                [webInstructions addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, webInstructions.length)];
+                self.instructionsView.attributedText = webInstructions;
             }
             @catch (id anException) {
                 instructions = @"No instructions available. Get full details here.";
@@ -109,7 +122,7 @@
     }];
 }
 
-- (IBAction)didTapAdd:(id)sender {
+- (IBAction)addOrRemove:(id)sender {
     [[APIManager shared] getSavedRecipesWithID:self.iD withCompletion:^(NSArray *recipes, NSError *error) {
         if (recipes.count != 0) {
             for (PFObject *object in recipes) {
@@ -126,6 +139,7 @@
             [self.addButton setTitle:@"Remove" forState:UIControlStateNormal];
         }
     }];
+    
 }
 
 

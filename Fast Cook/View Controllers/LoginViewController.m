@@ -28,7 +28,7 @@
 
 }
 
-- (IBAction)didTapLogin:(id)sender {
+-(IBAction)login:(id)sender {
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
     
@@ -57,7 +57,6 @@
         }
     }];
 }
-
 
 /*
 #pragma mark - Navigation

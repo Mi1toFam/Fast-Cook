@@ -15,6 +15,7 @@
 #import "RecipeCollectionHeader.h"
 
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionLayout;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSArray *recipes;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -40,7 +41,15 @@
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchRecipes) forControlEvents:UIControlEventValueChanged];
-    [self.collectionView insertSubview:self.refreshControl atIndex:0];
+    [self.view insertSubview:self.refreshControl atIndex:0];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    self.collectionLayout.minimumLineSpacing = 0;
+    self.collectionLayout.minimumInteritemSpacing = 0;
+    self.collectionLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 - (void)fetchRecipes {
@@ -59,6 +68,12 @@
     }];
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    int totalwidth = self.collectionView.bounds.size.width;
+    int numberOfCellsPerRow = 2;
+    int dimensions = (CGFloat)(totalwidth / numberOfCellsPerRow);
+    return CGSizeMake(dimensions, dimensions);
+}
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     RecipeCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RecipeCollectionCell" forIndexPath:indexPath];
@@ -72,6 +87,18 @@
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.recipes.count;
+}
+
+- (IBAction)logout:(id)sender {
+    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    myDelegate.window.rootViewController = loginViewController;
+    
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+    }];
 }
 
 - (IBAction)didTapLogout:(id)sender {
@@ -105,10 +132,9 @@
     RecipeCollectionHeader *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"RecipeCollectionHeader" forIndexPath:indexPath];
     PFUser *user = [PFUser currentUser];
     headerView.userLabel.text = user.username;
-    headerView.logoutButton.layer.cornerRadius = 20;
     return headerView;
 }
 
-
-
 @end
+    
+    

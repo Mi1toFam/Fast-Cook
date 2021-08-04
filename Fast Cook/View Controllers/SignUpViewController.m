@@ -29,7 +29,7 @@
     self.view.backgroundColor = GradientColor(UIGradientStyleLeftToRight, self.view.frame, colors);
 }
 
-- (IBAction)didTapSignUp:(id)sender {
+- (IBAction)signUp:(id)sender {
     // initialize a user object
     PFUser *newUser = [PFUser user];
     

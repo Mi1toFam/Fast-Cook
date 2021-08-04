@@ -41,6 +41,7 @@
     
     self.ingredientsTableView.delegate = self;
     self.ingredientsTableView.dataSource = self;
+    self.ingredientsTableView.allowsMultipleSelectionDuringEditing = NO;
         
     [self.searchField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
 }
@@ -56,7 +57,12 @@
     }
     else {
         [self.searchTableView setHidden:FALSE];
-        NSString *link = [@"https://api.spoonacular.com/food/ingredients/autocomplete?apiKey=68c1462cdfc64471a3c2df51555225be&number=10&query=" stringByAppendingString:self.searchField.text];
+        NSString *link = [@"https://api.spoonacular.com/food/ingredients/autocomplete?number=10&query=" stringByAppendingString:self.searchField.text];
+        NSString *path = [[NSBundle mainBundle] pathForResource: @"Info" ofType: @"plist"];
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+        id key = [dict objectForKey: @"API_KEY"];
+        NSString *apiKey = [@"&apiKey=" stringByAppendingString:key];
+        link = [link stringByAppendingString:apiKey];
         [[APIManager shared] getAutocompleteWithURL:link withCompletion:^(NSArray *searches, NSError *error) {
             if (searches) {
                 self.searches = searches;
@@ -91,8 +97,6 @@
         IngredientCell *cell = [self.ingredientsTableView dequeueReusableCellWithIdentifier:@"IngredientCell"];
         
         cell.nameLabel.text = self.ingredients[indexPath.row];
-        cell.indexPath = indexPath;
-        cell.delegate = self;
         
         return cell;
     }
@@ -119,14 +123,12 @@
     }
 }
 
-- (void)removeTableViewCellAtPath: (NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.ingredients removeObjectAtIndex:(NSUInteger)indexPath.row];
     
     NSMutableArray *indexPaths  = [[NSMutableArray alloc] init];
     [indexPaths addObject:indexPath];
-    
     [self.ingredientsTableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
-    
 }
 
 /*
