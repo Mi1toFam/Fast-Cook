@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view setHidden:TRUE];
     self.addButton.layer.cornerRadius = 40;
     
     [[APIManager shared] getSavedRecipesWithID:self.iD withCompletion:^(NSArray *recipes, NSError *error) {
@@ -56,6 +57,7 @@
     NSString *fullURL = [middleURL stringByAppendingString:key];
     [[APIManager shared] getSpecificRecipeWithURL:fullURL withCompletion:^(NSDictionary *recipe, NSError *error) {
         if (recipe) {
+            
             self.recipe = recipe;
             
             self.titleLabel.text = recipe[@"title"];
@@ -115,6 +117,7 @@
                 
                 self.instructionsView.attributedText = newInstructions;
             }
+            [self.view setHidden:FALSE];
         }
         else {
             NSLog(@"😫😫😫 Error getting recipes: %@", error.localizedDescription);

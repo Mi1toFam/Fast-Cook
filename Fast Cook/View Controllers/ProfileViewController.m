@@ -17,6 +17,7 @@
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionLayout;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (strong, nonatomic) NSArray *recipes;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
@@ -27,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.logoutButton.layer.cornerRadius = 20;
+    
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
         

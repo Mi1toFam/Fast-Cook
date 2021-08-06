@@ -126,7 +126,7 @@
     cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, -500, 100, 0);
     
     // Define the final state (after the animation)
-    [UIView animateWithDuration:1.0 animations:^{cell.layer.transform = CATransform3DIdentity;}];
+    [UIView animateWithDuration:0.8 animations:^{cell.layer.transform = CATransform3DIdentity;}];
     
 }
 
