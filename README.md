@@ -6,7 +6,7 @@ Original App Design Project
 ## Table of Contents
 1. [Overview](#Overview)
 2. [Product Spec](#Product-Spec)
-3. [Wireframes](#Demo)
+3. [Demo](#Demo)
 4. [Schema](#Schema)
 
 ## Overview
