@@ -5,9 +5,9 @@ Original App Design Project
 
 ## Table of Contents
 1. [Overview](#Overview)
-1. [Product Spec](#Product-Spec)
-1. [Wireframes](#Wireframes)
-2. [Schema](#Schema)
+2. [Product Spec](#Product-Spec)
+3. [Wireframes](#Demo)
+4. [Schema](#Schema)
 
 ## Overview
 ### Description
@@ -77,7 +77,7 @@ Fast Cook allows users to quickly search for the best recipes based on all the m
 * Profile
     * Details
 
-### Demo
+## Demo
 
 https://user-images.githubusercontent.com/65626248/129395027-98bc1112-893b-4a1c-b1ad-dbffddf56768.mp4
 
