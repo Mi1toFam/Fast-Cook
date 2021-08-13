@@ -11,7 +11,7 @@ Original App Design Project
 
 ## Overview
 ### Description
-Fast Cook allows users to search for recipes based on all the ingredients they have at their disposal. The app plans to prioritize certain ingredients over others for users to have the best experience (example: prioritizing chicken over bread crumbs for Chicken Alfredo). The app also plans to filter recipes based on how long it takes each recipe to be prepared. The app will also allow users to save recipes by being able to sign into an account.
+Fast Cook allows users to quickly search for the best recipes based on all the materials they have at their disposal. The app also plans to filter recipes based on how long it takes each recipe to be prepared, along with certain dietary restrictions. The app will also allow users to save recipes by being able to sign into an account.
 
 ### App Evaluation
 
@@ -31,58 +31,55 @@ Fast Cook allows users to search for recipes based on all the ingredients they h
 * User can create a new account and login
 * User can type as many ingredients as they have
 * User can type the maximum ready time they want for a recipe
-* App will rank ingredients in each recipe based on how important they are to the final product
-* User can search and scroll through multiple recipes given the ingredients and max ready time that they type in
+* User can input whether they are vegan/vegetarian
+* User can search and scroll through multiple recipes given the restrictions above
 * User can select recipe to bring up full detailed view of recipe
-* User can see percentage match to each recipe, based on rankings made by the app for ingredients
-* User can save recipes they find appealing
+* User can save recipes they find appealing to their profile
 
 **Optional Nice-to-have Stories**
 
-* User can filter recipes based on *several* dietary restrictions (examples: vegetarian/vegan, dairy, red meat, Vitamin C, etc.)
+* User can filter recipes based on *several* dietary restrictions (examples: dairy, red meat, Vitamin C, etc.)
 * User can click a link to a video of explaining the recipe
+* User can save searches that they perform to their profile
 * User can filter recipes based on cuisine (example: chinese, pub, indian, italian, etc.)
+* User can change parts of their profile after creating an account (profile picture, change username, and other settings)
 
 ### 2. Screen Archetypes
 
 * Login / Register - User signs up or logs into their account
     * User can create a new account and login
 * Filter - User can search for recipes based on parameters
+    * User can do a standard search for recipes by name 
     * User can type as many ingredients as they have
     * User can type the maximum ready time they want for a recipe
-    * App will rank ingredients in each recipe based on how important they are to the final product (this happens more on the backend)
+    * User can select whether they are vegan/vegetarian
 * Stream - User can scroll through recipes in a table view
-    * User can search and scroll through multiple recipes given the ingredients and max ready time that they type in
-    * User can see percentage match to each recipe, based on rankings made by the app for ingredients
+    * User can search and scroll through multiple recipes 
 * Detail - User can view the full details of a recipe.
     * User can select recipe to bring up full detailed view of recipe
-    * User can see percentage match to each recipe, based on rankings made by the app for ingredients
+    * Details include name, servings, ready time, instructions, and ingredients
 * Saved Recipes - User can view their saved recipes
-    * User can save recipes they find appealing
-* Settings - User can configure app options
+    * User can save recipes they find appealing to their profile.
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
 * Search
-* Saved Recipes
+* Profile
 
 **Flow Navigation** (Screen to Screen)
 
 * Search
+    * Ingredients
     * Recipes
        * Details
-* Saved Recipes
+* Profile
     * Details
 
-### [BONUS] Digital Wireframes & Mockups
+### Demo
 
-<img width="780" alt="Screen Shot 2021-07-09 at 12 34 54 PM" src="https://user-images.githubusercontent.com/65626248/125110125-31d86d80-e0b2-11eb-9cf4-32dc538da72e.png">
-
-### [BONUS] Interactive Prototype
-
-* Coming soon...
+https://user-images.githubusercontent.com/65626248/129395027-98bc1112-893b-4a1c-b1ad-dbffddf56768.mp4
 
 ## Schema 
 
